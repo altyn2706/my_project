@@ -15,6 +15,8 @@ public class StudentDaoImpl implements StudentDao{
     @Override
     public void createTable() {
         entityManager.getTransaction().begin();
+          entityManager.getEntityGraph("FFF");
+
         Query nativeQuery = entityManager.createNativeQuery("create table if not exists student(" +
                 "id serial primary key ," +
                 "name varchar)");
